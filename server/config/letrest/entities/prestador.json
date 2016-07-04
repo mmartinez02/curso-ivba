@@ -1,0 +1,130 @@
+{
+	"name": "prestador",
+	"path": "/prestador",
+	"table": "prestador",
+	"weight": 0,
+	"pk": "prestadorid",
+	"fk": {
+		"prestadortipoid": {
+			"relation": "prestadortipoid@prestadortipo",
+			"field": "prestadortipoid",
+			"type": "object",
+			"value": "prestadortipo.prestadortipoid"
+		},
+		"uglid": {
+			"relation": "uglid@ugl",
+			"field": "uglid",
+			"type": "object",
+			"value": "ugl.uglid"
+		}
+	},
+	"mapping": [
+		{
+			"field": "prestadorid@prestador",
+			"attribute": "prestadorid",
+			"external": true
+		},
+		{
+			"field": "name@prestador",
+			"attribute": "name"
+		},
+		{
+			"field": "cuit@prestador",
+			"attribute": "cuit"
+		},
+		{
+			"field": "phone@prestador",
+			"attribute": "phone"
+		},
+		{
+			"field": "email@prestador",
+			"attribute": "email"
+		},
+		{
+			"field": "comment@prestador",
+			"attribute": "comment"
+		},
+		{
+			"field": "prestadortipoid@prestadortipo",
+			"attribute": "prestadortipo@prestadortipoid",
+			"external": true
+		},
+		{
+			"field": "name@prestadortipo",
+			"attribute": "prestadortipo@name",
+			"external": true
+		},
+		{
+			"field": "uglid@ugl",
+			"attribute": "ugl@uglid",
+			"external": true
+		},
+		{
+			"field": "name@ugl",
+			"attribute": "ugl@name",
+			"external": true
+		}
+	],
+	"service": {
+		"all": {
+		  "filter": [
+			{
+			  "key": "name",
+			  "field": "prestador.name",
+			  "source": "url",
+			  "value": "prestador.name",
+			  "comparator": "like",
+			  "prefix": "%",
+			  "suffix": "%"
+			},
+			{
+			  "key": "cuit",
+			  "field": "prestador.cuit",
+			  "source": "url",
+			  "value": "prestador.cuit",
+			  "comparator": "like",
+			  "prefix": "%",
+			  "suffix": "%"
+			},
+			{
+			  "key": "prestadortipoid",
+			  "field": "prestadortipo.prestadortipoid",
+			  "source": "url",
+			  "value": "prestadortipo.prestadortipoid",
+			  "comparator": "="
+
+			},
+			{
+			  "key": "uglid",
+			  "field": "ugl.uglid",
+			  "source": "url",
+			  "value": "ugl.uglid",
+			  "comparator": "="
+
+			},
+			{
+			  "key": "quick",
+			  "field": [
+				"prestador.name",
+				"prestador.cuit"
+			  ],
+			  "value": [
+				"prestador.name",
+				"prestador.cuit"
+			  ],
+			  "comparator": "ilike",
+			  "source": "url",
+			  "prefix": "%",
+			  "suffix": "%"
+			}
+		  ],
+		  "order": {
+			"default": "prestador.name"
+		  }
+		},
+		"get": {},
+		"post": {},
+		"put": {},
+		"delete": {}
+	}
+}

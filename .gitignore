@@ -1,0 +1,7 @@
+server/node_modules
+ui/node_modules
+ui/.tmp
+ui/bower_components
+ui/dist
+ui/back
+.idea

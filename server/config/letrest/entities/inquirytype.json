@@ -1,0 +1,26 @@
+{
+	"name": "inquirytype",
+	"path": "/inquirytype",
+	"table": "inquirytype",
+	"weight": 0,
+	"pk": "inquirytypeid",
+	"fk": {},
+	"mapping": [
+		{
+			"field": "inquirytypeid@inquirytype",
+			"attribute": "inquirytypeid",
+			"external": true
+		},
+		{
+			"field": "name@inquirytype",
+			"attribute": "name"
+		}
+	],
+	"service": {
+		"all": {},
+		"get": {},
+		"post": {},
+		"put": {},
+		"delete": {}
+	}
+}

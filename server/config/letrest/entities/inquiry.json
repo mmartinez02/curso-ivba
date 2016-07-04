@@ -1,0 +1,98 @@
+{
+  "name": "inquiry",
+  "path": "/inquiry",
+  "table": "inquiry",
+  "weight": 0,
+  "pk": "inquiryid",
+  "fk": {},
+  "mapping": [
+    {
+      "field": "inquiryid@inquiry",
+      "attribute": "inquiryid",
+      "external": true
+    },
+    {
+      "field": "name@inquiry",
+      "attribute": "name"
+    },
+    {
+      "field": "idtypeid@inquiry",
+      "attribute": "idtypeid"
+    },
+    {
+      "field": "idnumber@inquiry",
+      "attribute": "idnumber"
+    },
+    {
+      "field": "email@inquiry",
+      "attribute": "email"
+    },
+    {
+      "field": "areacode@inquiry",
+      "attribute": "areacode"
+    },
+    {
+      "field": "phone@inquiry",
+      "attribute": "phone"
+    },
+    {
+      "field": "address@inquiry",
+      "attribute": "address"
+    },
+    {
+      "field": "postalcode@inquiry",
+      "attribute": "postalcode"
+    },
+    {
+      "field": "stateid@inquiry",
+      "attribute": "stateid"
+    },
+    {
+      "field": "city@inquiry",
+      "attribute": "city"
+    },
+    {
+      "field": "joined@inquiry",
+      "attribute": "joined"
+    },
+    {
+      "field": "inquirytypeid@inquiry",
+      "attribute": "inquirytypeid"
+    },
+    {
+      "field": "inquirysubtypeid@inquiry",
+      "attribute": "inquirysubtypeid"
+    },
+    {
+      "field": "claimtypeid@inquiry",
+      "attribute": "claimtypeid"
+    },
+    {
+      "field": "hasprocedure@inquiry",
+      "attribute": "hasprocedure"
+    },
+    {
+      "field": "procedurenumber@inquiry",
+      "attribute": "procedurenumber"
+    },
+    {
+      "field": "claimdesc@inquiry",
+      "attribute": "claimdesc"
+    },
+    {
+      "field": "membernumber@inquiry",
+      "attribute": "membernumber"
+    },
+    {
+      "field": "memberrelationshipid@inquiry",
+      "attribute": "memberrelationshipid"
+    }
+  ],
+  "service": {
+    "all": {},
+    "get": {},
+    "post": {},
+    "put": {},
+    "delete": {}
+  }
+}

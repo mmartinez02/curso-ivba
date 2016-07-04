@@ -1,0 +1,140 @@
+{
+  "name": "Prestadores",
+  "icon": "fa fa-users fa-lg",
+  "form": "prestador-form",
+  "entity": "prestador",
+  "pk": "prestadorid",
+  "parent": "__base__top__",
+  "allowselection": true,
+  "constants": {
+    "ADD_TEXT": "Nuevo Prestador",
+    "EDIT_TEXT": "Editar",
+    "REMOVE_TEXT": "Eliminar"
+  },
+  "fields": [
+    {
+      "name": "prestadorid",
+      "type": "number",
+      "label": "#",
+      "listable": true,
+      "editable": false,
+      "readonly": true
+    },
+    {
+      "type": "separator",
+      "label": "Datos Prestador",
+      "editable": true
+    },
+    {
+      "name": "prestadortipo",
+      "weight":50,
+      "type": "select",
+      "label": "Tipo de Usuario",
+      "provider": {
+        "path": "prestadortipo",
+        "valueFrom": "prestadortipoid",
+        "textFrom": "name"
+      },
+      "listable": true,
+      "editable": true,
+      "alias": true,
+      "template": "{{item.prestadortipo.name}}",
+      "class-group":"crud-field-75"
+    },
+    {
+      "name": "ugl",
+      "weight":50,
+      "type": "select",
+      "label": "UGL",
+      "provider": {
+        "path": "ugl",
+        "valueFrom": "uglid",
+        "textFrom": "name"
+      },
+      "listable": true,
+      "editable": true,
+      "alias": true,
+      "position": 100,
+      "template": "{{item.ugl.name}}",
+      "class-group":"crud-field-75"
+    },
+    {
+      "name": "name",
+      "type": "text",
+      "label": "Denominacion Social",
+      "listable": true,
+      "editable": true,
+      "class-group": "crud-field-75"
+    },
+    {
+      "name": "cuit",
+      "type": "text",
+      "label": "CUIT/CUIL",
+      "listable": true,
+      "editable": true,
+      "class-group": "crud-field-75"
+    },
+    {
+      "name": "phone",
+      "type": "text",
+      "label": "Teléfono",
+      "listable": true,
+      "editable": true,
+      "class-group": "crud-field-75"
+    },
+    {
+      "name": "email",
+      "type": "text",
+      "label": "Email",
+      "listable": false,
+      "editable": true,
+      "class-group": "crud-field-75"
+    },
+    {
+      "name": "comment",
+      "type": "textarea",
+      "label": "Observaciones",
+      "listable": false,
+      "editable": true,
+      "class-group": "crud-field-75"
+    }
+  ],
+  "filters": [
+    {
+      "name": "name",
+      "label": "Denominacion Social",
+      "type": "string",
+      "class-filter": "two-columns"
+    },
+    {
+      "name": "cuit",
+      "label": "CUIT/CUIL",
+      "type": "string",
+      "class-filter": "two-columns"
+    },
+    {
+      "name": "prestadortipoid",
+      "label": "Tipo de Usuario",
+      "class-filter": "two-columns",
+      "type": "tags",
+      "provider": {
+        "path": "prestadortipo",
+        "valueFrom": "prestadortipoid",
+        "textFrom": "name",
+        "placeholder": "Seleccione tipo"
+      }
+    },
+    {
+      "name": "uglid",
+      "label": "UGL",
+      "type": "select",
+      "class-filter": "two-columns",
+      "provider": {
+        "path": "ugl",
+        "valueFrom": "uglid",
+        "textFrom": "name",
+        "placeholder": "Seleccione..."
+      }
+    }
+  ]
+}

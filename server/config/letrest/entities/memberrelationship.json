@@ -1,0 +1,26 @@
+{
+	"name": "memberrelationship",
+	"path": "/memberrelationship",
+	"table": "memberrelationship",
+	"weight": 0,
+	"pk": "memberrelationshipid",
+	"fk": {},
+	"mapping": [
+		{
+			"field": "memberrelationshipid@memberrelationship",
+			"attribute": "memberrelationshipid",
+			"external": true
+		},
+		{
+			"field": "name@memberrelationship",
+			"attribute": "name"
+		}
+	],
+	"service": {
+		"all": {},
+		"get": {},
+		"post": {},
+		"put": {},
+		"delete": {}
+	}
+}

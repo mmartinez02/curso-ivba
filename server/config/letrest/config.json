@@ -1,0 +1,21 @@
+{
+	"pk_template": ":id",
+	"pk_name": "id",
+	"path_base": "accounts",
+	"max_rows": 100,
+	"path": {
+		"actions": "actions",
+		"services": "services"
+	},
+	"default_DB": {
+		"name": "pg_example",
+		"strategy": "./PostgresStrategy.js"
+	},
+	"databases": [
+		{
+			"name": "sqlite_example",
+			"strategy": "SQLiteStrategy.js"
+		}
+	]
+			
+}

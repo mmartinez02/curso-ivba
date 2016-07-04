@@ -1,0 +1,61 @@
+{
+    "name": "Base",
+    "form": "base-form",
+    "pk": "baseid",
+    "rows": 20,
+    "abstract":true,
+    "allowdelete": true,
+    "allowselection": true,
+    "constants": {
+        "ADD_TEXT":"Add",
+        "EDIT_TEXT":"Edit",
+        "REMOVE_TEXT":"Remove"
+    },
+    "filters": [
+        {
+            "name": "quick",
+            "label": "Quick Search",
+            "type": "quick"
+        }
+
+    ],
+    "actions": [
+        {
+            "name": "edit",
+            "label": "#EDIT_TEXT#",
+            "weight": 0,
+            "action": "editItem",
+            "disabled": "CRUD.editing!=undefined",
+            "show": "CRUD.selection",
+            "class": "btn btn-primary  btn-sm pull-right",
+            "icon": "fa fa-edit fa-lg",
+            "target": "bar",
+            "position":2
+        },
+        {
+            "name": "remove",
+            "label": "#REMOVE_TEXT#",
+            "weight": 0,
+            "action": "removeItem",
+            "disabled": "CRUD.editing!=undefined",
+            "show": "CRUD.selection",
+            "class": "btn btn-danger  btn-sm pull-right",
+            "icon": "fa fa-trash-o fa-lg",
+            "target": "bar",
+            "position":1
+        },
+        {
+            "name": "add",
+            "label": "#ADD_TEXT#",
+            "weight": 0,
+            "action": "addItem",
+            "disabled": "CRUD.editing!=undefined",
+            "show": true,
+            "class": "btn btn-primary btn-sm pull-left margin-left-sm",
+            "icon": "fa fa-plus-circle fa-md",
+            "target": "bar",
+            "position":0
+        }
+    ]
+}
+

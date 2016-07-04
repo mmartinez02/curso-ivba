@@ -1,0 +1,26 @@
+{
+	"name": "inquirysubtype",
+	"path": "/inquirysubtype",
+	"table": "inquirysubtype",
+	"weight": 0,
+	"pk": "inquirysubtypeid",
+	"fk": {},
+	"mapping": [
+		{
+			"field": "inquirysubtypeid@inquirysubtype",
+			"attribute": "inquirysubtypeid",
+			"external": true
+		},
+		{
+			"field": "name@inquirysubtype",
+			"attribute": "name"
+		}
+	],
+	"service": {
+		"all": {},
+		"get": {},
+		"post": {},
+		"put": {},
+		"delete": {}
+	}
+}

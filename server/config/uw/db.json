@@ -1,0 +1,15 @@
+{
+  "pg_example": {
+    "ip": "tantor.db.elephantsql.com:5432",
+    "user": "eyxfncaj",
+    "password": "jE_LTgGWMscmSRAFytSKzndV0yM1QU7q",
+    "dbname": "eyxfncaj",
+    "type": "pg",
+    "name": "pg_example"
+  },
+  "slite_example": {
+    "dbname": "../dummy.sqlite",
+    "type": "sqlite",
+    "name": "slite_example"
+  }
+}

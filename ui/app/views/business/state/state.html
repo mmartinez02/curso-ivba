@@ -1,0 +1,48 @@
+<h1>PROVINCIAS</h1>
+<div class="state-container">
+  <!-- Icono de Carga -->
+
+  <div class="loading" ng-if="State.loading">
+    <i class="loading fa fa-refresh fa-spin fa-4x"></i>
+  </div>
+  <!--Contenedor de la lista-->
+
+  <div ng-if="!State.loading">
+    <button class="state-button" ng-click="State.newState()"><i class="fa fa-plus-square"> Nuevo</i></button>
+
+    <div class="state-table">
+      <div class="state-heading">
+        <div class="state-cell">
+          <p>ID</p>
+        </div>
+        <div class="state-cell">
+          <p>Nombre</p>
+        </div>
+        <div class="state-cell">
+          <p>Acciones</p>
+        </div>
+      </div>
+      <div class="state-row" ng-repeat="(key, state) in State.states">
+        <div class="state-cell">
+          <p>{{state.stateid}}</p>
+        </div>
+        <div class="state-cell">
+          <p>{{state.name}}</p>
+        </div>
+        <div class="state-cell">
+          <p ng-if="!state.removeOptions">
+            <button class="state-action-button" ng-click="State.remove(key)"><i class="fa fa-minus-square"></i></button>
+            <button class="state-action-button" ng-click="State.edit(state)"><i class="fa fa-pencil-square"></i></button>
+          </p>
+
+          <p ng-if="state.removeOptions">
+            <button class="state-action-button remove" ng-click="State.removeCancel(key)"><i class="fa fa-times"></i></button>
+            <button class="state-action-button remove-c" ng-click="State.confirmRemove(state)"><i class="fa fa-check"></i></button>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+</div>

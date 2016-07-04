@@ -1,0 +1,16 @@
+.confirm-modal{
+
+}
+
+.modal-label{
+    width: 45%;
+    text-align: right;
+}
+.modal-field{
+    width: 20%;
+    text-align: left;
+}
+/*.close-modal{*/
+/*position: absolute;*/
+/*text-align: right;*/
+/*}*/

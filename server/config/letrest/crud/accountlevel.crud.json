@@ -1,0 +1,26 @@
+{
+  "name": "User Level",
+  "form": "userlevel-form",
+  "entity":"accountlevel",
+  "pk": "accountlevelid",
+  "parent":"__base__top__",
+  "fields": [
+    {
+      "name": "accountlevelid",
+      "type": "number",
+      "label": "#",
+      "listable": true,
+      "editable": true,
+      "readonly": true
+    },
+    {
+      "name": "name",
+      "type": "text",
+      "label": "Name",
+      "listable": true,
+      "editable": false
+    }
+
+  ]
+
+}

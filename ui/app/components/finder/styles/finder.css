@@ -1,0 +1,60 @@
+finder .finder-control {
+    height: auto !important;
+    display: inline-block;
+    border-radius: 5px;
+    background-color: #ffffff;
+    border: 1px solid #fafafa;
+    height: 25px !important;
+    font-size: 12px;
+    line-height: 1.5;
+    border-radius: 4px;
+    width:  calc( 100% - 150px );
+    border: 1px solid #ccc;
+    vertical-align: middle;
+}
+
+
+.finder-control   > .finder-tag {
+    display: inline-block;
+    padding: 0px 4px 0px 5px;
+    border: 1px solid;
+    border-radius: 4px;
+    height: 21px;
+    margin-top: 1px;
+    margin-left: 2px;
+    background-color: #cccccc;
+    color: #ffffff;
+}
+
+.finder-control   > .finder-tag > i {
+    padding: 2px 2px 2px 4px;
+}
+
+
+.finder-control   > .finder-tag:hover {
+    color: red !important;
+    cursor: pointer;
+}
+
+.finder-control input {
+    border: none;
+    width: auto !important;
+    display: inline-block;
+    padding: 0px;
+    height: 100%;
+    margin-left: 5px;
+    font-size: 12px;
+    -webkit-box-shadow:none;
+}
+
+.finder-control .form-control:focus {
+    border: none !important;
+    outline-color: transparent;
+    border-color: transparent;
+    box-shadow: transparent;
+    -webkit-box-shadow:none;
+}
+.finder-tag > i {
+    top: 2px !important;
+    left: 2px !important;
+}

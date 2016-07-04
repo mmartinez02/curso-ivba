@@ -1,0 +1,125 @@
+/**** SIDEBAR SHOW ****/
+.aside-scroll{
+  float:left;
+  overflow: auto;
+  overflow-x: hidden;
+  height: 95%;
+}
+.content-frame {
+    width: calc( 100% - 205px );
+    transform: translate(205px, 0);
+    transition: transform 0.4s ease-out;
+    height: 100%;
+}
+
+.navbar {
+    height: 75px;
+    background: #fff;
+    font-family: Maven Pro;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: normal;
+    letter-spacing: 0em;
+    text-decoration: none;
+    text-transform: uppercase;
+    border-bottom: 2px solid rgb(210,210,210);
+    border-radius: 0px;
+}
+.navbar-brand {
+    padding-top: 18px;
+}
+.nav > li > a:hover, .nav > li > a:focus {
+    text-decoration: none;
+    background-color: #fff;
+    color: #532d6d;
+}
+
+.nav-menu-selected{
+    color: #532d6d ! important;
+}
+
+.nav-middle {
+    margin-top:15px;
+}
+
+aside {
+    background-color: #fafafa;
+    position: absolute;
+    width: 205px;
+    overflow:hidden;
+    transition: all 0.4s ease-out;
+}
+aside ul {
+    width: 205px;
+    margin-top: 10px;
+    transition: all 0.4s ease-out;
+}
+
+.nav__text {
+    opacity: 1;
+    color: #999999;
+    transition: all 0.4s ease-out;
+}
+.nav-menu-selected + .nav__text {
+    color: black;
+}
+
+aside .nav li a {
+    padding: 4px 14px;
+}
+aside span.show-nav {
+    opacity: 0;
+    transform: translate( 0px, 7px );
+    transition: all 0.4s ease-out;
+}
+
+/*** pin nav ***/
+aside .pin-nav {
+    opacity: .5;
+    cursor: pointer;
+    transition: all 0.4s ease-out;
+    background: #666666;
+    padding: 4px;
+    border-radius: 0px 0px 10px 10px;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+}
+aside .pin-nav:hover, aside .pin-nav.pinned {
+    opacity: 1;
+}
+
+/**** SIDEBAR COLLAPSED ****/
+.nav-collapsed aside {
+    width: 65px;
+}
+.nav-collapsed aside ul {
+    transform: translate( 0px, -7px );
+}
+.nav-collapsed .nav__text {
+    opacity: 0;
+}
+.nav-collapsed aside span.show-nav {
+    opacity: 1;
+    transform: translate( 15px, 7px );
+}
+.nav-collapsed aside span.pin-nav {
+    opacity: 0;
+    transform: translate( 65px, 0px );
+}
+
+.nav-collapsed .content-frame {
+    transform: translate(65px, 0);
+    width: calc( 100% - 65px );
+}
+/**** SIDEBAR HIDDEN ****/
+.nav-hidden aside {
+    width: 0px;
+}
+.nav-hidden aside ul, .nav-hidden aside pin-nav {
+    display: none;
+}
+.nav-hidden .content-frame {
+    transform: translate(0px, 0);
+    width: 100%;
+}

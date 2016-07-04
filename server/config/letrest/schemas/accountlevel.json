@@ -1,0 +1,12 @@
+{
+    "definition":{
+        "id":"/accountlevel",
+        "properties":{
+            "name":{
+                "type":"string",
+                "required":true
+            }
+        }
+    },
+    "dependencies":[]
+}

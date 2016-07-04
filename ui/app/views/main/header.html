@@ -1,0 +1,21 @@
+<nav class="container-fluid navbar  remove-padding-left remove-margin-bottom" role="navigation"  ng-controller="HeaderCtrl">
+
+        <a class="navbar-brand  " href="#" title="LetrestApp">
+            <img src="images/logo_h.png" alt="">
+        </a>
+    <lr-show-when-logged>
+        <div class="header-user-section pull-right" ng-controller="MenuCtrl">
+            <div class="header-user-data pull-right">
+                 <span>{{session.name}}</span>
+                 <span>{{session.role.name}}</span>
+              <a href=""  ng-click="password()"><i class="fa fa-key "></i>&nbsp;{{ 'CHANGE_PASSWORD' | translate }}</a>
+              <a href="" ng-click="mail()"><i class="fa fa-envelope-o "></i>&nbsp;{{ 'CHANGE_MAIL' | translate }}</a>
+              <a href="" ng-click="logout()"><i class="fa fa-sign-out "></i>&nbsp;Logout</a>
+            </div>
+            <div class="header-user-icon pull-right">
+                <i class="glyphicon glyphicon-user"> </i>
+            </div>
+
+        </div>
+    </lr-show-when-logged>
+</nav>

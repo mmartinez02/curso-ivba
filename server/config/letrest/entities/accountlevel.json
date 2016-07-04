@@ -1,0 +1,36 @@
+{
+    "name": "accountlevel",
+    "path": "/accountlevel",
+    "table": "accountlevel",
+    "weight": 0,
+    "pk": "accountlevelid",
+    "mapping": [
+        {
+            "field": "accountlevelid@accountlevel",
+            "attribute": "accountlevelid",
+            "external": true
+        },
+        {
+            "field": "name@accountlevel",
+            "attribute": "name"
+        }
+    ],
+    "service": {
+        "all": {
+            "filter":[
+                {
+                    "key": "levelsecurity",
+                    "field": "accountlevel.weight",
+                    "source": "security",
+                    "value": "#account_weight#",
+                    "comparator": "<="
+                }
+
+        ],
+            "order":{"default":"name"}},
+        "get": {},
+        "post": {},
+        "put": {},
+        "delete": {}
+    }
+}

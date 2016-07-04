@@ -1,0 +1,19 @@
+html, body, main, aside {
+    height: 100%;
+    min-height: 100%;
+}
+footer {
+    border-top: 1px solid #808080;
+    padding: 1em;
+    text-align: center;
+    margin-top: 2px;
+}
+
+section {
+    bottom: 0px;
+    top: 0px;
+
+}
+.clear-both {
+    clear: both;
+}

@@ -1,0 +1,71 @@
+{
+    "name": "Base",
+    "form": "base-form",
+    "pk": "baseid",
+    "rows": 20,
+    "abstract":true,
+    "allowdelete": true,
+    "allowSelection": false,
+    "constants": {
+        "ADD_TEXT":"Add",
+        "EDIT_TEXT":"Edit",
+        "REMOVE_TEXT":"Remove"
+    },
+    "fields": [
+        {
+            "name": "actions",
+            "type": "actions",
+            "label": "Actions",
+            "listable": true,
+            "editable": false,
+            "position":1000
+        }
+    ],
+    "filters": [
+        {
+            "name": "quick",
+            "label": "Quick Search",
+            "type": "quick"
+        }
+
+    ],
+    "actions": [
+        {
+            "name": "edit",
+            "label": "#EDIT_TEXT#",
+            "weight": 0,
+            "action": "editItem",
+            "disabled": false,
+            "show": true,
+            "class": "btn btn-primary btn-xs",
+            "icon": "fa fa-edit fa-lg",
+            "target": "list",
+            "position":1
+        },
+        {
+            "name": "remove",
+            "label": "#REMOVE_TEXT#",
+            "weight": 0,
+            "action": "removeItem",
+            "disabled": false,
+            "show": true,
+            "class": "btn btn-danger btn-xs",
+            "icon": "fa fa-trash-o fa-lg",
+            "target": "list",
+            "position":2
+        },
+        {
+            "name": "add",
+            "label": "#ADD_TEXT#",
+            "weight": 0,
+            "action": "addItem",
+            "disabled": "CRUD.editing!=undefined",
+            "show": true,
+            "class": "btn btn-primary btn-sm pull-right",
+            "icon": "fa fa-plus-circle fa-md",
+            "target": "bar",
+            "position":3
+        }
+    ]
+}
+

@@ -1,0 +1,37 @@
+<div class="modal-header">
+  <h3 class="modal-title display-inline"> {{ 'CHANGE_MAIL' | translate }} </h3>
+
+</div>
+
+<form name="mailForm" class="crud-panel-body">
+  <div class="text-center">
+    <i ng-if="working" class="fa fa-2x fa-circle-o-notch fa-spin text-warning"></i>
+  </div>
+  <div class="crud-field" ng-if="saved">
+    <label class="password-free-label" > The data was updated succesfully.</label>
+  </div>
+
+  <div class="crud-field" ng-if="!saved">
+    <label class="password-label" > {{ 'NEW_MAIL' | translate }}</label>
+    <input type="text" ng-model="newemail.new"  name="newmail"class="password-field"
+          required ng-pattern="/[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}/" ng-disabled="saving">
+    <div ng-if="mailForm.$error.required && mailForm.$dirty">
+      <label class="password-label"> </label>
+      <label class="password-error-label" >This field is required.</label>
+    </div>
+    <div ng-if="mailForm.$error.pattern && mailForm.$dirty">
+      <label class="password-label"> </label>
+        <label class="password-error-label" >The mail is invalid.</label>
+    </div>
+
+  </div>
+
+  <div class="modal-footer">
+    <div class="text-righ">
+
+      <a href="" class="btn btn-primary btn-sm" ng-click="confirmclose()" ng-disabled="false" ng-if="saved" ><i class="fa fa-check fa-lg"></i>{{ 'CONFIRM' | translate}}&nbsp;</a>
+      <a href="" class="btn btn-primary btn-sm" ng-click="save()" ng-disabled="false" ng-if="!saved" ><i class="fa fa-check fa-lg"></i>{{ 'CONFIRM' | translate}}&nbsp;</a>
+      <a href="" class="btn btn-danger btn-sm" ng-click="cancel()" ng-disabled="false" ng-if="!saved"><i class="fa fa-close fa-lg"></i>{{ 'CANCEL' | translate }}&nbsp;</a>
+    </div>
+  </div>
+ </form>

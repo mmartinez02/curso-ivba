@@ -1,0 +1,27 @@
+<ul class="nav nav-pills nav-stacked aside-scroll" ng-controller="MenuCtrl">
+    <li ng-repeat="s in sections"
+        ng-if="(s.weight | lrHasPermissions:s.weightStrict) && s.level==menu.level"
+        ng-class="{ 'selected': isActive(s) }">
+            <a  ng-if="!s.hidden"
+                href=""
+                ui-sref="{{s.state}}"
+                lr-show-at-least-on="{{s.weight}}">
+                <span class="fa-stack fa-lg"
+                      ng-class="isActive(s)?'nav-menu-selected':''">
+                          <i class="fa fa-square fa-stack-2x"></i>
+                          <i class="fa {{s.icon}} fa-stack-1x fa-inverse"></i>
+                </span>
+                <span class="nav__text"
+                      ng-class="isActive(s)?'nav-menu-selected':''">
+                  {{s.label | translate}}
+                </span>
+            </a>
+    </li>
+</ul>
+
+<span class="pin-nav fa icon-white"
+      ng-class="{ pinned: layout.navigation.isPinned(),'fa-unlock': !layout.navigation.isPinned(),'fa-lock': layout.navigation.isPinned() }"
+      ng-click="layout.navigation.togglePin()">
+</span>
+
+

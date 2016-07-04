@@ -1,0 +1,106 @@
+{
+  "name": "Afiliados",
+  "icon": "fa fa-user fa-lg",
+  "form": "user-form",
+  "entity": "account",
+  "pk": "accountid",
+  "parent": "__base__top__",
+  "allowselection": true,
+  "constants": {
+    "ADD_TEXT": "Nuevo Afiliado",
+    "EDIT_TEXT": "Editar",
+    "REMOVE_TEXT": "Eliminar"
+  },
+  "fields": [
+    {
+      "name": "accountid",
+      "type": "number",
+      "label": "#",
+      "listable": true,
+      "editable": false,
+      "readonly": true
+    },
+    {
+      "type": "separator",
+      "label": "Datos Afiliado",
+      "editable": true
+    },
+    {
+      "name": "name",
+      "type": "text",
+      "label": "Nombre",
+      "listable": true,
+      "editable": true,
+      "class-group": "crud-field-75"
+    },
+    {
+      "name": "lastname",
+      "type": "text",
+      "label": "Apellido",
+      "listable": true,
+      "editable": true,
+      "class-group": "crud-field-75"
+    },
+    {
+      "name": "idnumber",
+      "type": "text",
+      "label": "DNI",
+      "listable": true,
+      "editable": true,
+      "class-group": "crud-field-75"
+    },
+    {
+      "name": "address",
+      "type": "text",
+      "label": "Dirección",
+      "listable": true,
+      "editable": true,
+      "class-group": "crud-field-75"
+    },
+    {
+      "name": "nick",
+      "type": "text",
+      "label": "Nick",
+      "listable": true,
+      "editable": true,
+      "class-group": "crud-field-75"
+    },
+    {
+      "name": "email",
+      "type": "text",
+      "label": "Email",
+      "listable": false,
+      "editable": true,
+      "class-group": "crud-field-75"
+    },
+    {
+      "name": "moment",
+      "type": "date",
+      "label": "Fecha Alta",
+      "alias": true,
+      "listable": true,
+      "class-group": "crud-field-50",
+      "template": "{{item.moment | date:'dd-MM-yyyy' }}"
+    }
+  ],
+  "filters": [
+    {
+      "name": "name",
+      "label": "Nombre",
+      "type": "string",
+      "class-filter": "three-columns"
+    },
+    {
+      "name": "lastname",
+      "label": "Lastname",
+      "type": "string",
+      "class-filter": "three-columns"
+    },
+    {
+      "name": "nick",
+      "label": "Nick",
+      "type": "string",
+      "class-filter": "three-columns"
+    }
+  ]
+}

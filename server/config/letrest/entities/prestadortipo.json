@@ -1,0 +1,26 @@
+{
+	"name": "prestadortipo",
+	"path": "/prestadortipo",
+	"table": "prestadortipo",
+	"weight": 0,
+	"pk": "prestadortipoid",
+	"fk": {},
+	"mapping": [
+		{
+			"field": "prestadortipoid@prestadortipo",
+			"attribute": "prestadortipoid",
+			"external": true
+		},
+		{
+			"field": "name@prestadortipo",
+			"attribute": "name"
+		}
+	],
+	"service": {
+		"all": {},
+		"get": {},
+		"post": {},
+		"put": {},
+		"delete": {}
+	}
+}

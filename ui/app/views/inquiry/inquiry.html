@@ -1,0 +1,337 @@
+<div class="inquiryscreen">
+  <div class="loading" ng-if="InquiryCtrl.loading">
+    <i class="loading fa fa-refresh fa-spin fa-4x"></i>
+  </div>
+
+  <div ng-if="!InquiryCtrl.loading && !InquiryCtrl.succes">
+
+    <form id="formInquiry" name="inquiryInfo" class="crud-form"
+          ng-submit="inquiryInfo.$valid && InquiryCtrl.save()"
+          novalidate>
+
+      <p class="title_page">COMPLETÁ TUS DATOS:</p>
+
+      <div class="crud-field">
+        <label for="name" class="crud-label" title="name"
+               ng-class="{'required-field': (inquiryInfo.$submitted && inquiryInfo.name.$invalid)}">
+          APELLIDO Y NOMBRE *
+        </label>
+        <input
+          class="crud-control text"
+          type="text"
+          required
+          name="name" id="name" ng-model="InquiryCtrl.data.name"
+          />
+      </div>
+
+      <div class="crud-field">
+        <div class="left">
+          <label for="idtypeid" class="crud-label" title="idtypeid"
+                 ng-class="{'required-field': (clientInfo.$submitted && clientInfo.idtype.$invalid)}">
+            TIPO DE DOCUMENTO *
+          </label>
+          <select
+            class="crud-control combo"
+            name="idtypeid"
+            id="idtypeid"
+            required
+            ng-options="idtype as idtype.name for idtype in InquiryCtrl.idtypes"
+            ng-model="InquiryCtrl.idtypeValue.value"
+            >
+            <option value="">Seleccione...</option>
+          </select>
+        </div>
+        <div class="right">
+          <label for="idnumber" class="crud-label" title="idnumber"
+                 ng-class="{'required-field': (inquiryInfo.$submitted && inquiryInfo.idnumber.$invalid)}">
+            Nº DE DOCUMENTO *
+          </label>
+          <input
+            class="crud-control text"
+            type="text"
+            required
+            name="idnumber" id="idnumber" ng-model="InquiryCtrl.data.idnumber"
+            />
+        </div>
+      </div>
+
+
+      <div class="crud-field threecolum">
+        <div class="left">
+          <label for="email" class="crud-label" title="email"
+                 ng-class="{'required-field': (inquiryInfo.$submitted && inquiryInfo.email.$invalid)}">
+            EMAIL*
+          </label>
+          <input
+            class="crud-control text"
+            type="email"
+            required
+            name="email" id="email" ng-model="InquiryCtrl.data.email"
+            />
+        </div>
+        <div class="center">
+          <label for="areacode" class="crud-label" title="areacode"
+                 ng-class="{'required-field': (inquiryInfo.$submitted && inquiryInfo.areacode.$invalid)}">
+            CÓD. DE AREA*
+          </label>
+          <input
+            class="crud-control text"
+            type="text"
+            required
+            name="areacode" id="areacode" ng-model="InquiryCtrl.data.areacode"
+            />
+        </div>
+        <div class="right">
+          <label for="phone" class="crud-label" title="phone"
+                 ng-class="{'required-field': (inquiryInfo.$submitted && inquiryInfo.phone.$invalid)}">
+            TELÉFONO*
+          </label>
+          <input
+            class="crud-control text"
+            type="text"
+            required
+            name="phone" id="phone" ng-model="InquiryCtrl.data.phone"
+            />
+        </div>
+      </div>
+
+      <div class="crud-field">
+        <div class="left">
+          <label for="address" class="crud-label" title="address"
+                 ng-class="{'required-field': (inquiryInfo.$submitted && inquiryInfo.address.$invalid)}">
+            DIRECCIÓN*
+          </label>
+          <input
+            class="crud-control text"
+            type="text"
+            required
+            name="address" id="address" ng-model="InquiryCtrl.data.address"
+            />
+        </div>
+        <div class="right">
+          <label for="postalcode" class="crud-label" title="postalcode"
+                 ng-class="{'required-field': (inquiryInfo.$submitted && inquiryInfo.postalcode.$invalid)}">
+            CÓDIGO POSTAL*
+          </label>
+          <input
+            class="crud-control text"
+            type="text"
+            required
+            name="postalcode" id="postalcode" ng-model="InquiryCtrl.data.postalcode"
+            />
+        </div>
+      </div>
+
+      <div class="crud-field">
+        <div class="left">
+          <label for="stateid" class="crud-label" title="stateid"
+                 ng-class="{'required-field': (clientInfo.$submitted && clientInfo.stateid.$invalid)}">
+            PROVINCIA*
+          </label>
+          <select
+            class="crud-control combo"
+            name="stateid"
+            id="stateid"
+            required
+            ng-options="state as state.name for state in InquiryCtrl.states"
+            ng-model="InquiryCtrl.stateValue.value"
+            >
+            <option value="">Seleccione...</option>
+          </select>
+        </div>
+
+        <div class="right">
+          <label for="city" class="crud-label" title="city"
+                 ng-class="{'required-field': (inquiryInfo.$submitted && inquiryInfo.city.$invalid)}">
+            LOCALIDAD*
+          </label>
+          <input
+            class="crud-control text"
+            type="text"
+            required
+            name="city" id="city" ng-model="InquiryCtrl.data.city"
+            />
+        </div>
+      </div>
+
+      <div class="crud-field">
+        <label for="joined" class="crud-label" title="joined"
+               ng-class="{'required-field': (inquiryInfo.$submitted && inquiryInfo.joined.$invalid)}">
+          ¿ES AFILIADO DE PAMI? *
+        </label>
+        <label>
+          <input type="radio"
+                 ng-model="InquiryCtrl.data.joined"
+                 required
+                 ng-click="InquiryCtrl.resetjoined()"
+                 name="joined" id="joined"
+                 value="true">
+          SI
+        </label>
+        <label>
+          <input type="radio"
+                 ng-model="InquiryCtrl.data.joined"
+                 required
+                 ng-click="InquiryCtrl.resetjoined()"
+                 name="joined" id="joined"
+                 value="false">
+          NO
+        </label>
+      </div>
+
+      <div class="crud-field" ng-if="InquiryCtrl.data.joined==='true'">
+        <label for="membernumber" class="crud-label" title="membernumber"
+               ng-class="{'required-field': (inquiryInfo.$submitted && inquiryInfo.membernumber.$invalid)}">
+          Nº DE BENEFICIO *
+        </label>
+        <input
+          class="crud-control text"
+          type="text"
+          required
+          name="membernumber" id="membernumber" ng-model="InquiryCtrl.data.membernumber"
+          />
+      </div>
+
+      <div class="crud-field" ng-if="InquiryCtrl.data.joined==='false'">
+        <label for="memberrelationshipid" class="crud-label" title="memberrelationshipid"
+               ng-class="{'required-field': (inquiryInfo.$submitted && inquiryInfo.memberrelationshipid.$invalid)}">
+          RELACIÓN CON EL AFILIADO
+        </label>
+        <select
+          class="crud-control combo"
+          name="memberrelationshipid"
+          id="memberrelationshipid"
+          required
+          ng-options="memberrelationship as memberrelationship.name for memberrelationship in InquiryCtrl.memberrelationships"
+          ng-model="InquiryCtrl.memberrelationshipValue.value"
+          >
+          <option value="">Seleccione...</option>
+        </select>
+      </div>
+
+      <p class="title_page title2">SELECCIONÁ TU RECLAMO O CONSULTA Y HACÉ CLICK EN ENVIAR</p>
+
+      <div class="crud-field">
+        <label for="inquirytypeid" class="crud-label" title="inquirytypeid"
+               ng-class="{'required-field': (inquiryInfo.$submitted && inquiryInfo.inquirytypeid.$invalid)}">
+          TIPO DE CONSULTA
+        </label>
+        <select
+          class="crud-control combo"
+          name="inquirytypeid"
+          id="inquirytypeid"
+          ng-change="InquiryCtrl.resetinquirytype()"
+          required
+          ng-options="inquirytype as inquirytype.name for inquirytype in InquiryCtrl.inquirytypes"
+          ng-model="InquiryCtrl.inquirytypeValue.value"
+          >
+          <option value="">Seleccione...</option>
+        </select>
+      </div>
+
+      <div class="crud-field" ng-if="InquiryCtrl.inquirytypeValue.value.inquirytypeid === '1'">
+        <label for="inquirysubtypeid" class="crud-label" title="inquirysubtypeid"
+               ng-class="{'required-field': (inquiryInfo.$submitted && inquiryInfo.inquirysubtypeid.$invalid)}">
+          CONSULTAS, TRÁMITES Y SERVICIOS:
+        </label>
+        <select
+          class="crud-control combo"
+          name="inquirysubtypeid"
+          id="inquirysubtypeid"
+          required
+          ng-options="inquirysubtype as inquirysubtype.name for inquirysubtype in InquiryCtrl.inquirysubtypes"
+          ng-model="InquiryCtrl.inquirysubtypeValue.value"
+          >
+          <option value="">Seleccione...</option>
+        </select>
+      </div>
+
+      <div class="crud-field" ng-if="InquiryCtrl.inquirytypeValue.value.inquirytypeid === '2'">
+        <label for="claimtypeid" class="crud-label" title="claimtypeid"
+               ng-class="{'required-field': (inquiryInfo.$submitted && inquiryInfo.claimtypeid.$invalid)}">
+          RECLAMOS:
+        </label>
+        <select
+          class="crud-control combo"
+          name="claimtypeid"
+          id="claimtypeid"
+          required
+          ng-options="claimtype as claimtype.name for claimtype in InquiryCtrl.claimtypes"
+          ng-model="InquiryCtrl.claimtypeValue.value"
+          >
+          <option value="">Seleccione...</option>
+        </select>
+
+        <label for="hasprocedure" class="crud-label" title="hasprocedure"
+               ng-class="{'required-field': (inquiryInfo.$submitted && inquiryInfo.hasprocedure.$invalid)}">
+          * ¿YA COMENZÓ UN TRAMITE AL RESPECTO?
+        </label>
+        <label>
+          <input type="radio"
+                 ng-model="InquiryCtrl.data.hasprocedure"
+                 required
+                 name="hasprocedure" id="hasprocedure"
+                 value="true">
+          SI
+        </label>
+        <label>
+          <input type="radio"
+                 ng-model="InquiryCtrl.data.hasprocedure"
+                 required
+                 ng-click="InquiryCtrl.resetprocedurenumber()"
+                 name="hasprocedure" id="hasprocedure"
+                 value="false">
+          NO
+        </label>
+
+        <div ng-if="InquiryCtrl.data.hasprocedure==='true'">
+          <label for="procedurenumber" class="crud-label" title="procedurenumber"
+                 ng-class="{'required-field': (inquiryInfo.$submitted && inquiryInfo.procedurenumber.$invalid)}">
+            * Nº DE EXPEDIENTE
+          </label>
+          <input
+            class="crud-control text"
+            type="text"
+            required
+            name="procedurenumber" id="procedurenumber" ng-model="InquiryCtrl.data.procedurenumber"
+            />
+        </div>
+
+        <div class="crud-field">
+          <label for="claimdesc" class="crud-label" title="claimdesc">
+            DESCRIPCIÓN DEL RECLAMO
+          </label>
+      <textarea
+        class="text_desc"
+        id="claimdesc"
+        name="claimdesc"
+        ng-model="InquiryCtrl.data.claimdesc"></textarea>
+        </div>
+      </div>
+
+      <p class="required_field_title">* Campos Obligatorios</p>
+    </form>
+
+    <!--Footer-->
+    <div class="crud-panel-footer">
+      <button class="btn btn-primary btn-sm" type="submit" form="formInquiry" value="Submit">
+        <i class="fa fa-check fa-lg"></i>&nbsp;ENVIAR
+      </button>
+      <button href="" class="btn btn-default btn-sm" ng-click="InquiryCtrl.resetForm()">
+        <i class="fa fa-times fa-lg"></i>&nbsp;CANCELAR
+      </button>
+    </div>
+  </div>
+
+  <div ng-if="!InquiryCtrl.loading && InquiryCtrl.succes">
+
+    <p class="finish">CONSULTA/RECLAMO ENVIADO GRACIAS!</p>
+
+    <div class="crud-panel-footer .otraconsultafooter">
+      <button class="btn btn-primary btn-sm .otra_consulta" ng-click="InquiryCtrl.resetForm()">
+        <i class="fa fa-check fa-lg"></i>&nbsp;ENVIAR OTRA CONSULTA
+      </button>
+    </div>
+
+  </div>
+</div>

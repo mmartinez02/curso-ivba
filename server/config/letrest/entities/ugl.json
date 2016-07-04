@@ -1,0 +1,26 @@
+{
+	"name": "ugl",
+	"path": "/ugl",
+	"table": "ugl",
+	"weight": 0,
+	"pk": "uglid",
+	"fk": {},
+	"mapping": [
+		{
+			"field": "uglid@ugl",
+			"attribute": "uglid",
+			"external": true
+		},
+		{
+			"field": "name@ugl",
+			"attribute": "name"
+		}
+	],
+	"service": {
+		"all": {},
+		"get": {},
+		"post": {},
+		"put": {},
+		"delete": {}
+	}
+}

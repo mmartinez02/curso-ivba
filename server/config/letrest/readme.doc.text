@@ -1,0 +1,122 @@
+{
+    "name": "account",    //Nombre con el que despues vas a buscar la entidad, tiene que coincidir con el archivo sino tira warning.
+    "path": "/account",   //Path por medio del cual me van a pegar, soporta el esquema de :param/:param1/pepe
+    "table": "account",   //Tabla base de ejeuccion
+    "pk": "accountid",    //PK de la tabla
+    "weight": 100,        //Security Weight de toda la entidad, numero o rol
+    "fk": {  //FKs, esto va generar INNER JOINS por defecto, se puede cambiar el comparador y el tipo de JOIN
+        "accountlevelid": {
+            "relation": "accountlevelid@accountlevel",
+            "field": "accountlevelid",
+            "type": "object",  "url" va a buscar al path, y "object" al json
+            "value": "accountlevel.accountlevelid",
+            "jointype":"LEFT | RIGHT | INNER (si no se especifica),
+            "comparator":"< > = != (por defecto sin no se especifica)
+            "source":"table to join" (Si no se especifica usar el de la entidad)
+        }
+    },
+    "mapping": [
+        {
+            "field": "accountid@account",
+            "attribute": "accountid",
+            "external": true
+        },
+        {
+            "field": "name@account",
+            "attribute": "name"
+        },
+        {
+            "field": "lastname@account",
+            "attribute": "lastname"
+        },
+        {
+            "field": "nick@account",
+            "attribute": "nick"
+        },
+        {
+            "field": "password@account",
+            "attribute": "password"
+        },
+        {
+            "field": "email@account",
+            "attribute": "email"
+        },
+        {
+            "field": "accountlevelid@accountlevel",
+            "attribute": "accountlevel@accountlevelid",
+            "external": true
+        },
+        {
+            "field": "name@accountlevel",
+            "attribute": "accountlevel@name",
+            "external": true
+        }
+    ],
+    "service": {
+        "all": {
+            "filter":[
+                {
+                    "key": "name", //Nombre del parametro en la query string
+                    "field": "account.name", //Nombre del field de la base de datos
+                    "source": "url", //A donde tengo que ir a buscar el valor => url / path / security
+                    "value": "account.name", //Valor que se va a poner si no se especifico el parametro
+                    "comparator": "like", //Comparador a usar en el where
+                    "prefix":"%", //Prefijo a poner en el valor
+                    "suffix":"%" //Sufijo a poner en el valor
+
+                },
+                {
+                    "key": "lastname",
+                    "field": "account.lastname",
+                    "source": "url",
+                    "value": "account.lastname",
+                    "comparator": "like",
+                    "prefix":"%",
+                    "suffix":"%"
+
+                },
+                {
+                    "key": "nick",
+                    "field": "account.nick",
+                    "source": "url",
+                    "value": "account.nick",
+                    "comparator": "like",
+                    "prefix":"%",
+                    "suffix":"%"
+
+                },
+                {
+                    "key": "level",
+                    "field": "accountlevel.name",
+                    "source": "url",
+                    "value": "accountlevel.name",
+                    "comparator": "like",
+                    "prefix":"%",
+                    "suffix":"%"
+
+                },
+                {
+                    "key": "security",
+                    "field": "accountlevel.weight",
+                    "source": "security",
+                    "value": "#account_weight#",
+                    "comparator": "<="
+                },
+                {
+                    "key": "quick",
+                    "field":["accountlevel.name","account.name","account.lastname","account.nick"], //Cuando es un array va hacer un OR con todas las comparaciones.
+                    "value":["accountlevel.name","account.name","account.lastname","account.nick"],
+                    "comparator":"ilike",
+                    "source":"url",
+                    "prefix":"%",
+                    "suffix":"%"
+
+                }
+            ]
+        },
+        "get": {},
+        "post": {},
+        "put": {},
+        "delete": {}
+    }
+}

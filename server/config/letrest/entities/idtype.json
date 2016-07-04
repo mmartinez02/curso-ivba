@@ -1,0 +1,26 @@
+{
+	"name": "idtype",
+	"path": "/idtype",
+	"table": "idtype",
+	"weight": 0,
+	"pk": "idtypeid",
+	"fk": {},
+	"mapping": [
+		{
+			"field": "idtypeid@idtype",
+			"attribute": "idtypeid",
+			"external": true
+		},
+		{
+			"field": "name@idtype",
+			"attribute": "name"
+		}
+	],
+	"service": {
+		"all": {},
+		"get": {},
+		"post": {},
+		"put": {},
+		"delete": {}
+	}
+}

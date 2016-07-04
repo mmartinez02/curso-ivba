@@ -1,0 +1,26 @@
+{
+	"name": "claimtype",
+	"path": "/claimtype",
+	"table": "claimtype",
+	"weight": 0,
+	"pk": "claimtypeid",
+	"fk": {},
+	"mapping": [
+		{
+			"field": "claimtypeid@claimtype",
+			"attribute": "claimtypeid",
+			"external": true
+		},
+		{
+			"field": "name@claimtype",
+			"attribute": "name"
+		}
+	],
+	"service": {
+		"all": {},
+		"get": {},
+		"post": {},
+		"put": {},
+		"delete": {}
+	}
+}

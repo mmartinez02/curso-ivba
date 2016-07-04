@@ -1,0 +1,18 @@
+<h1>NUEVA PROVINCIA</h1>
+<div class="state-container">
+
+  <div class="loading" ng-if="NewState.loading">
+    <i class="loading fa fa-refresh fa-spin fa-4x"></i>
+  </div>
+
+  <div ng-if="!NewState.loading">
+    <span>Nombre</span>
+    <input type="text" class="state-input" ng-model="NewState.data.name"/>
+
+    <div class="new-state-footer">
+      <button class="state-button" ng-click="NewState.cancel()">Cancelar</button>
+      <button class="state-button" ng-click="NewState.save()">Crear</button>
+    </div>
+  </div>
+
+</div>

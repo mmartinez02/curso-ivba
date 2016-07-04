@@ -1,0 +1,17 @@
+<lr-show-when-logged>
+
+  <breadcrumbs></breadcrumbs>
+  <div class="padding-md">
+    <splash></splash>
+  </div>
+
+</lr-show-when-logged>
+
+
+<lr-hide-when-logged>
+
+  <div ng-controller="SignInController as Login">
+    <ng-include src="'letrest/view/security/LoginView.html'"></ng-include>
+  </div>
+
+</lr-hide-when-logged>

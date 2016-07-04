@@ -1,0 +1,195 @@
+/**
+ * Created by mscoccimarro on 23/04/15.
+ */
+/*---------------
+     SUMMARY
+---------------*/
+.summary {
+    border-radius: 4px;
+    padding: 30px;
+    overflow: hidden;
+    position: relative;
+    z-index: 3;
+}
+
+.summary.open {
+    background-color: #506e88;
+}
+
+.summary.closed {
+    background-color: #db2e2e;
+}
+
+.summary label {
+    display: inline-block;
+    color: #f7f9f8;
+    font-weight: 300;
+}
+
+.state {
+    font-size: 32px; /* 32px / 16px */
+    font-weight: 400;
+    position: absolute;
+    bottom: 20px;
+    left: 30px;
+}
+
+.value {
+    display: block;
+    font-weight: 400;
+}
+
+/*---------------
+    INV DATA
+---------------*/
+.inv-data {
+    position: absolute;
+    right: 30px;
+}
+
+.inv-data.top {
+    top: 20px;
+    border-left: 1px solid #fff;
+    padding-left: 10px;
+}
+
+.inv-data.bottom {
+    bottom: 20px;
+}
+
+.inv-data.top label {
+    float: none;
+    display: inline-block;
+    font-size: 12px;
+}
+
+.inv-data.top .value {
+    margin-right: 10px;
+}
+
+.inv-data.top .value:last-child {
+    margin-right: 0;
+}
+
+.inv-data.bottom .value {
+    font-size: 32px; /* 32px / 16px */
+}
+
+.inv-data.bottom .value:nth-child(2) {
+    font-size: 20px; /* 20px / 16px */
+}
+
+.inv-data.bottom .total .value {
+    float: right;
+}
+
+.inv-data.bottom > .name {
+    margin-right: 15px;
+}
+
+/*---------------
+    INV BOX
+---------------*/
+.inv-box {
+    display: inline-table;
+}
+
+.inv-box .row {
+    display: table-row;
+}
+
+.inv-box .name,
+.inv-box .value {
+    display: table-cell;
+}
+
+.inv-box .value {
+    padding: 0 200px 0 15px;
+}
+
+/*-------------
+    ITEMS
+-------------*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+ul, ol {list-style: none;}
+
+.items {
+    position: relative;
+    top: -20px;
+    padding-top: 20px;
+    border-right: 1px solid #d2d2d2;
+    border-left: 1px solid #d2d2d2;
+}
+
+.items > li {
+    padding: 20px;
+    border-bottom: 1px solid #d2d2d2;
+    overflow: hidden;
+}
+
+.item {
+    width: 50%;
+    padding: 10px;
+}
+
+.item > div {
+    overflow: hidden;
+}
+
+.item > div:first-child {
+    margin-bottom: 10px;
+}
+
+.item .value {
+    display: inline;
+    color: #393939;
+    font-weight: 400;
+}
+
+.item .item-total {
+    font-size: 16px; /* 16px / 14px */
+    color: #000;
+    font-weight: 400;
+}
+
+.item-quantity {
+    width: 40px;
+}
+
+.item.info {
+    float: left;
+}
+
+.item.values {
+    float: right;
+    padding: 15px 0 0 30px;
+    border-left: 1px solid #a0a0a0;
+}
+
+.item.values .left {
+    float: left;
+}
+
+.item.values .right {
+    float: right;
+}
+
+.item label {
+    font-weight: 300;
+    color: #a4a4a4;
+}
+
+.item.info label:first-child {
+    border-right: 1px solid #a0a0a0;
+    padding-right: 5px;
+    margin-right: 10px;
+}
+
+.cleaner {
+    clear: both;
+}

@@ -1,0 +1,100 @@
+{
+  "name": "account",
+  "path": "/account",
+  "table": "account",
+  "pk": "accountid",
+  "weight": 0,
+  "mapping": [
+    {
+      "field": "accountid@account",
+      "attribute": "accountid",
+      "external": true
+    },
+    {
+      "field": "name@account",
+      "attribute": "name"
+    },
+    {
+      "field": "lastname@account",
+      "attribute": "lastname"
+    },
+    {
+      "field": "nick@account",
+      "attribute": "nick"
+    },
+    {
+      "field": "email@account",
+      "attribute": "email"
+    },
+    {
+      "field": "moment@account",
+      "attribute": "moment",
+      "external": true
+    },
+    {
+      "field": "address@account",
+      "attribute": "address"
+    },
+    {
+      "field": "idnumber@account",
+      "attribute": "idnumber"
+    }
+  ],
+  "service": {
+    "all": {
+      "filter": [
+        {
+          "key": "name",
+          "field": "account.name",
+          "source": "url",
+          "value": "account.name",
+          "comparator": "like",
+          "prefix": "%",
+          "suffix": "%"
+        },
+        {
+          "key": "lastname",
+          "field": "account.lastname",
+          "source": "url",
+          "value": "account.lastname",
+          "comparator": "like",
+          "prefix": "%",
+          "suffix": "%"
+        },
+        {
+          "key": "nick",
+          "field": "account.nick",
+          "source": "url",
+          "value": "account.nick",
+          "comparator": "like",
+          "prefix": "%",
+          "suffix": "%"
+        },
+        {
+          "key": "quick",
+          "field": [
+            "account.name",
+            "account.lastname",
+            "account.nick"
+          ],
+          "value": [
+            "account.name",
+            "account.lastname",
+            "account.nick"
+          ],
+          "comparator": "ilike",
+          "source": "url",
+          "prefix": "%",
+          "suffix": "%"
+        }
+      ],
+      "order": {
+        "default": "account.name"
+      }
+    },
+    "get": {},
+    "post": {},
+    "put": {},
+    "delete": {}
+  }
+}

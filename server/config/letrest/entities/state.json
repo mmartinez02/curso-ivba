@@ -1,0 +1,26 @@
+{
+	"name": "state",
+	"path": "/state",
+	"table": "state",
+	"weight": 0,
+	"pk": "stateid",
+	"fk": {},
+	"mapping": [
+		{
+			"field": "stateid@state",
+			"attribute": "stateid",
+			"external": true
+		},
+		{
+			"field": "name@state",
+			"attribute": "name"
+		}
+	],
+	"service": {
+		"all": {},
+		"get": {},
+		"post": {"post":"insertStateLog@/actions/insertStateLog.js"},
+		"put": {},
+		"delete": {}
+	}
+}

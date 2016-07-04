@@ -1,0 +1,107 @@
+.state-container {
+  padding: 50px 0 0 50px;
+  width: 95%;
+}
+
+.state-table {
+  display: table;
+  width: 100%;
+  padding: 50px;
+}
+
+.state-title {
+  display: table-caption;
+  text-align: center;
+  font-weight: bold;
+  font-size: larger;
+}
+
+.state-heading {
+  display: table-row;
+  font-weight: bold;
+  text-align: center;
+}
+
+.state-row {
+  display: table-row;
+}
+
+.state-cell {
+  display: table-cell;
+  border: solid;
+  border-width: thin;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.state-button {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: #00c492;
+}
+
+.state-action-button {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background-color: #00c492;
+}
+
+.state-edit-body {
+  width: 100%;
+  height: 100px;
+  padding: 30px;
+  background-color: #e2e2e2;
+}
+
+.state-input {
+  margin-right: 50px;
+}
+
+input[readonly] {
+  background-color: #c4c6ca;
+}
+
+.modal-close {
+  position: absolute;
+  top: 6px;
+  right: 18px;
+  color: #777777;
+  display: inline-block;
+  font-size: 40px;
+  font-weight: 200;
+  cursor: pointer;
+}
+
+.modal-close:hover {
+  text-decoration: none;
+}
+
+.modal-close:focus {
+  text-decoration: none;
+}
+
+.footer-modal {
+  margin-top: 20px;
+}
+
+.edit-button {
+  width: 100%;
+  background-color: #00c492;
+}
+
+.remove {
+  background-color: red;
+}
+
+.remove-c {
+  background-color: green;
+}
+
+.new-state-footer {
+  width: 200px;
+  margin-top: 20px;
+  margin: 0 auto;
+}
+

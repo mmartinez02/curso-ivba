@@ -1,0 +1,141 @@
+<!doctype html>
+<html class="no-js" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
+<head>
+  <meta charset="utf-8">
+  <title>LetRest App</title>
+  <link rel="shortcut icon" type="image/png" href="images/favicon.png"/>
+
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width">
+  <base href="/">
+  <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+  <!-- build:css(.) styles/vendor.css -->
+  <!-- bower:css -->
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+  <link rel="stylesheet" href="bower_components/angular-datepicker/dist/angular-datepicker.css" />
+  <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.css" />
+  <link rel="stylesheet" href="bower_components/letrest-angular/letrest-ui.min.css" />
+  <link rel="stylesheet" href="bower_components/letrest-crud-angular/letrest-crud-ui.min.css" />
+  <!-- endbower -->
+  <!-- endbuild -->
+  <!-- build:css(.tmp) styles/main.css -->
+  <link rel="stylesheet" href="styles/main.css">
+  <link rel="stylesheet" href="components/finder/styles/finder.css">
+
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
+  <!-- endbuild -->
+</head>
+<body ng-app="LetrestApp" class="content">
+
+<lr-security>
+  <!--[if lt IE 7]>
+  <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
+    your browser</a> to improve your experience.</p>
+  <![endif]-->
+
+  <!-- Add your site or application content here -->
+  <header ui-view="header" class="row-fluid"></header>
+
+  <main ng-controller="LayoutController as layout" class="row-fluid"
+        ng-class="{ 'nav-collapsed': layout.navigation.isCollapsed(), 'nav-hidden': !layout.navigation.isHidden() }">
+
+    <!--SIDEBAR-->
+    <aside autoscroll="false" ui-view="sidebar" ng-mouseover="layout.navigation.show()"
+           ng-mouseout="layout.navigation.hide()"></aside>
+
+    <!--MAIN CONTENT-->
+    <section autoscroll="false" class="content-frame" ui-view="content"></section>
+  </main>
+</lr-security>
+
+<!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
+<script>
+  (function (i, s, o, g, r, a, m) {
+    i['GoogleAnalyticsObject'] = r;
+    i[r] = i[r] || function () {
+        (i[r].q = i[r].q || []).push(arguments)
+      }, i[r].l = 1 * new Date();
+    a = s.createElement(o),
+      m = s.getElementsByTagName(o)[0];
+    a.async = 1;
+    a.src = g;
+    m.parentNode.insertBefore(a, m)
+  })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+  ga('create', 'UA-XXXXX-X');
+  ga('send', 'pageview');
+</script>
+
+<!-- build:js(.) scripts/oldieshim.js -->
+<!--[if lt IE 9]>
+<script src="bower_components/es5-shim/es5-shim.js"></script>
+<script src="bower_components/json3/lib/json3.min.js"></script>
+<![endif]-->
+<!-- endbuild -->
+
+<!-- build:js(.) scripts/vendor.js -->
+<!-- bower:js -->
+<script src="bower_components/jquery/dist/jquery.js"></script>
+<script src="bower_components/angular/angular.js"></script>
+<script src="bower_components/json3/lib/json3.js"></script>
+<script src="bower_components/angular-resource/angular-resource.js"></script>
+<script src="bower_components/angular-route/angular-route.js"></script>
+<script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+<script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+<script src="bower_components/angular-translate/angular-translate.js"></script>
+<script src="bower_components/angular-translate-loader-static-files/angular-translate-loader-static-files.js"></script>
+<script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+<script src="bower_components/angular-cookies/angular-cookies.js"></script>
+<script src="bower_components/lodash/lodash.js"></script>
+<script src="bower_components/angular-datepicker/dist/angular-datepicker.js"></script>
+<script src="bower_components/angular-local-storage/angular-local-storage.js"></script>
+<script src="bower_components/moment/moment.js"></script>
+<script src="bower_components/highcharts-ng/dist/highcharts-ng.js"></script>
+<script src="bower_components/highcharts/highcharts.js"></script>
+<script src="bower_components/highcharts/highcharts-more.js"></script>
+<script src="bower_components/highcharts/modules/exporting.js"></script>
+<script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+<script src="bower_components/ng-csv/build/ng-csv.min.js"></script>
+<script src="bower_components/letrest-angular/letrest-ui.min.js"></script>
+<script src="bower_components/ng-file-upload/ng-file-upload.js"></script>
+<script src="bower_components/letrest-crud-angular/letrest-crud-ui.min.js"></script>
+<script src="bower_components/angular-order-object-by/src/ng-order-object-by.js"></script>
+<!-- endbower -->
+<!-- endbuild -->
+
+<!-- build:js({.tmp,app}) scripts/scripts.js -->
+
+<script src="scripts/app.js"></script>
+<script src="scripts/routes.js"></script>
+<script src="scripts/translateConfig.js"></script>
+<script src="scripts/controllers/main/layout.js"></script>
+<script src="scripts/controllers/main/header.js"></script>
+<script src="scripts/controllers/main/menu.js"></script>
+<script src="scripts/controllers/main/sign-in.js"></script>
+
+<script src="components/breadcumbs/index.js"></script>
+<script src="scripts/controllers/main/splash.js"></script>
+
+<!-- DATE -->
+<script src="components/date/index.js"></script>
+
+<!-- FINDER -->
+<script src="components/finder/index.js"></script>
+<script src="components/finder/scripts/directives/finder.js"></script>
+
+<!--DMX-Modal-->
+<script src="components/modal/index.js"></script>
+<script src="components/modal/scripts/DMXModal.js"></script>
+<script src="components/modal/scripts/ModalController.js"></script>
+
+<!--CONTROLLERS-->
+<script src="scripts/controllers/inquiry/InquiryController.js"></script>
+
+<!--STATE-->
+<script src="scripts/controllers/business/state/StateController.js"></script>
+<script src="scripts/controllers/business/state/NewStateController.js"></script>
+<!-- endbuild -->
+
+</body>
+</html>

@@ -1,0 +1,21 @@
+<div class="row splash col-xs-12 col-md-6">
+  <div class="col-xs-6 col-md-4 remove-all-padding"
+       ng-repeat="s in splash.sections"
+       ng-if="s.level==splash.menu.level"
+    >
+    <a href="#"
+       ng-if="!s.hidden"
+       href=""
+       ui-sref="{{s.state}}"
+       lr-show-at-least-on="{{s.weight}}"
+      >
+      <div class="splash__item" ng-show="true">
+        <span class="fa-5x">
+          <i class="fa {{s.icon}} fa-stack-4x"></i>
+        </span>
+
+        <p>{{s.label | translate}}</p>
+      </div>
+    </a>
+  </div>
+</div>

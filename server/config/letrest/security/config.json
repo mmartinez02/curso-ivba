@@ -1,0 +1,38 @@
+{
+    "config": {
+        "REGISTER_PATH": {
+            "path": "/session/register"
+        },
+        "LOGIN_PATH": {
+            "path": "/session/login"
+        },
+        "SECURED_PATH": {
+            "path": "/accounts"
+        },
+        "ROLE_PATH": {
+            "path": "/session/roles"
+        },
+        "KEYPASS": "YOUR API KEY",
+        "KEYEXPIRATION": 24,
+        "CREDENTIAL_KEY": "accountid",
+        "CREDENTIAL_ROLE":"role",
+        "CREDENTIAL_ROLE_ID":"roleid",
+        "CREDENTIAL_WEIGHT":"weight",
+        "CREDENTIAL_NAME":"fullname",
+        "CREDENTIAL_NICK":"nick",
+        "ALLOW_EXCEPTIONS":false,
+        "STRATEGY": {
+            "IMPORT": "./PostgresSecurityStrategy.js",
+            "TABLE": "account",
+            "LOGIN_SQL":"select accountid,accountlevel.accountlevelid as roleid,account.name||' '||account.lastname as fullname,account.nick,account.password,accountlevel.name as role,accountlevel.weight from account inner join accountlevel on (accountlevel.accountlevelid=account.accountlevelid) where nick='%s' and password='%s'",
+            "FIELDS": {
+                "NICK": "nick",
+                "PASSWORD": "password"
+            },
+            "ROLE_SQL":"select name as role,weight from accountlevel",
+            "SERVICE_EXCEPTION_SQL": "select * from serviceexception"
+        }
+
+    }
+
+}

@@ -1,0 +1,22 @@
+.dasboard-container {
+    height: 100%;
+    width: 100%;
+}
+
+.dasboard-chart {
+    position: relative;
+    text-align: right;
+    width: 40%;
+    display: inline-block;
+    margin-left: 5%;
+}
+
+.dasboard-chart-line {
+    width: 650px;
+    height: 300px;
+}
+
+.dasboard-chart > select {
+    background-color: #ffffff;
+    margin: 15px 15px;
+}

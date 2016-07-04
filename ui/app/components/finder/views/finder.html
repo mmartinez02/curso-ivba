@@ -1,0 +1,24 @@
+<script type="text/ng-template" id="customTemplate.html">
+    <a>
+        <pre>
+            {{$parent.$parent.$parent.$parent.config |json}}
+        </pre>
+        <span bind-html-unsafe="match.model.name | typeaheadHighlight:query"></span>
+    </a>
+</script>
+
+
+<div class="finder-control ">
+    <div class="finder-tag"
+        ng-repeat="item in model track by $index"
+        ng-click="removeTag($index)">{{item[config.provider.textFrom]}}<i class="glyphicon glyphicon-remove"></i>
+    </div>
+    <input type="text"
+           ng-model="newTag"
+           placeholder="{{config.provider.placeholder||'Add tag'}}"
+           typeahead="item[config.provider.textFrom] for item in filterForTypeAhead($viewValue)"
+           typeahead-loading="loadingLocations"
+           typeahead-on-select="select($item, $model, $label)"
+           class="form-control {{classInput}}">
+    <i ng-show="loadingLocations" class="glyphicon glyphicon-refresh"></i>
+</div>

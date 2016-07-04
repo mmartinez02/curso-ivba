@@ -1,0 +1,6 @@
+<ol class="breadcrumb">
+    <li ng-repeat="state in $state.$current.path" ng-class="( state.$$hashKey == $state.$current.$$hashKey ?'active':'')">
+        <a ng-if="state.$$hashKey != $state.$current.$$hashKey" href="" ui-sref="{{state.name}}">{{ state.data.displayName || state.name | translate }}</a>
+        <span ng-if="state.$$hashKey == $state.$current.$$hashKey">{{ state.data.displayName || state.name | translate }}</span>
+    </li>
+</ol>

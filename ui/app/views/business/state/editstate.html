@@ -1,0 +1,21 @@
+<div>
+
+  <h2> Edición </h2>
+  <a class="modal-close" ng-click="EditState.closeModal()">X</a>
+
+</div>
+<div class="state-edit-body">
+
+  <div>
+    <span>ID</span>
+    <input type="text" class="state-input" readonly ng-model="EditState.data.stateid"/>
+
+    <span>Nombre</span>
+    <input type="text" class="state-input" ng-model="EditState.data.name"/>
+  </div>
+
+  <div class="footer-modal">
+    <button class="edit-button" ng-click="EditState.editItem()">Guardar</button>
+  </div>
+
+</div>

@@ -1,0 +1,41 @@
+.header-user-icon {
+    border: 1px solid #cccccc;
+    border-radius: 40px;
+    height: 50px;
+    width: 50px;
+    text-align: center;
+    vertical-align: bottom;
+    margin-top: 10px;
+}
+
+
+
+.header-user-section span {
+    font-size: 10px;
+    margin: 0px 5px;
+    font-weight: bold;
+    white-space: nowrap;
+    display: none;
+}
+.header-user-section a {
+    font-size: 8px;
+    margin: 0px 5px;
+    font-weight: bold;
+    white-space: nowrap;
+    display: none;
+    cursor: pointer;
+}
+.header-user-section:hover a,
+.header-user-section:hover span {
+    display: block;
+}
+
+.header-user-data  {
+    padding-top: 5px;
+}
+
+.header-user-icon > i {
+    font-size: 30px;
+    color: cadetblue;
+    margin-top: 5px;
+}

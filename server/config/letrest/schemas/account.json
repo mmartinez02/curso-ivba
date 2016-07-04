@@ -1,0 +1,37 @@
+{
+    "definition": {
+        "id": "/account",
+        "properties": {
+            "name": {
+                "type": "string",
+                "required": true
+            },
+            "lastname": {
+                "type": "string",
+                "required": true
+            },
+            "nick": {
+                "type": "string",
+                "required": true
+            },
+            "email": {
+                "type": "string",
+                "required": true
+            }
+        }
+
+    },
+    "dependencies": [
+        {
+            "definition": {
+                "id": "/acountlevel",
+                "properties": {
+                    "accountlevelid": {
+                        "type": "number",
+                        "required": true
+                    }
+                }
+            }
+        }
+    ]
+}
