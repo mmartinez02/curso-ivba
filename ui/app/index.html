@@ -35,7 +35,9 @@
   <![endif]-->
 
   <!-- Add your site or application content here -->
-  <header ui-view="header" class="row-fluid"></header>
+  <header ui-view="header" class="row-fluid">
+    <h1>IVBA - Sistemas</h1>
+  </header>
 
   <main ng-controller="LayoutController as layout" class="row-fluid"
         ng-class="{ 'nav-collapsed': layout.navigation.isCollapsed(), 'nav-hidden': !layout.navigation.isHidden() }">
