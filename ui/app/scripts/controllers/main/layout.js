@@ -1,4 +1,4 @@
-<
+
     angular.module('LetrestApp').controller("LayoutController", function($timeout, K, LetRestService, CollapsablePanel, Messages) {
 
 		//Layout configuration, Show/Hide/Pin Navigation
