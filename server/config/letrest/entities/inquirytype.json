@@ -17,7 +17,11 @@
 		}
 	],
 	"service": {
-		"all": {},
+		"all": {
+		  "order": {
+			"default": "inquirytype.name"
+		  }
+		},
 		"get": {},
 		"post": {},
 		"put": {},

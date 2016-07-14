@@ -77,6 +77,23 @@ angular
         }
       }
     },
+    'home.inquirytype': {
+      url: '/inquirytye',
+      data: {
+        label: 'INVESTIGACION',
+        displayName: 'INVESTIGACION',
+        icon: 'fa-users',
+        weight: 50,
+        level: 0,
+        movetolevel: 0,
+        crud: 'inquirytype'
+      },
+      views: {
+        'content@': {
+          templateUrl: 'views/common/main-crud.html'
+        }
+      }},
+
     'home.state': {
       url: '/provincias',
       data: {
