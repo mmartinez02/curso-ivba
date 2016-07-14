@@ -1,0 +1,33 @@
+{
+  "name": "Tipo de Consultas",
+  "icon": "fa fa-list fa-lg",
+  "form": "inquirytype-form",
+  "entity": "inquirytype",
+  "pk": "inquirytypeid",
+  "parent": "__base__top__",
+  "allowselection": true,
+  "constants": {
+    "ADD_TEXT": "Nuevo Tipo de Consulta",
+    "EDIT_TEXT": "Editar",
+    "REMOVE_TEXT": "Eliminar"
+  },
+  "fields": [
+    {
+      "name": "inquirytypeid",
+      "type": "number",
+      "label": "ID",
+      "listable": true,
+      "editable": false,
+      "readonly": true
+    },
+    {
+      "name": "name",
+      "type": "text",
+      "label": "NOMBRE",
+      "listable": true,
+      "editable": true,
+      "readonly": false
+    }
+  ],
+  "filters": []
+}
