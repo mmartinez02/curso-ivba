@@ -94,6 +94,23 @@ angular
         }
       }
     },
+      'home.inquirytype': {
+      url: '/inquirytype',
+      data: {
+        label: 'INVESTIGACION',
+        displayName: 'INVESTIGACION',
+        icon: 'fa-car',
+        weight: 50,
+        level: 0,
+        movetolevel: 0,
+        crud: 'inquirytype'
+      },
+      views: {
+        'content@': {
+          templateUrl: 'views/common/main-crud.html'
+        }
+      }
+    },
     'home.state.newstate': {
       url: '/provincias/agregar',
       data: {
@@ -111,6 +128,7 @@ angular
         }
       }
     }
+
   })
   .config(function ($stateProvider, $urlRouterProvider, menuRoutes) {
     $urlRouterProvider.otherwise('/home');
