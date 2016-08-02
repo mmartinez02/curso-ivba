@@ -34,7 +34,6 @@
             <button class="state-action-button" ng-click="State.remove(key)"><i class="fa fa-minus-square"></i></button>
             <button class="state-action-button" ng-click="State.edit(state)"><i class="fa fa-pencil-square"></i></button>
           </p>
-
           <p ng-if="state.removeOptions">
             <button class="state-action-button remove" ng-click="State.removeCancel(key)"><i class="fa fa-times"></i></button>
             <button class="state-action-button remove-c" ng-click="State.confirmRemove(state)"><i class="fa fa-check"></i></button>
@@ -42,7 +41,8 @@
         </div>
       </div>
     </div>
+
+    <list-size list="State.states"> </list-size>
+
   </div>
-
-
 </div>
