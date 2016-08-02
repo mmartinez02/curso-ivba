@@ -110,6 +110,23 @@ angular
           templateUrl: 'views/business/state/newstate.html'
         }
       }
+    },
+    'home.inquirytype': {
+      url: '/inquirytype',
+      data: {
+        label: 'INVESTIGACION',
+        displayName: 'INVESTIGACION',
+        icon: 'fa-cog',
+        weight: 50,
+        level: 0,
+        movetolevel: 0,
+        crud: 'inquirytype'
+      },
+      views: {
+        'content@': {
+          templateUrl: 'views/common/main-crud.html'
+        }
+      }
     }
   })
   .config(function ($stateProvider, $urlRouterProvider, menuRoutes) {
