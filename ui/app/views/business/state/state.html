@@ -11,6 +11,7 @@
     <button class="state-button" ng-click="State.newState()"><i class="fa fa-plus-square"> Nuevo</i></button>
 
     <div class="state-table">
+
       <div class="state-heading">
         <div class="state-cell">
           <p>ID</p>
@@ -40,9 +41,11 @@
             <button class="state-action-button remove-c" ng-click="State.confirmRemove(state)"><i class="fa fa-check"></i></button>
           </p>
         </div>
+
       </div>
     </div>
-  </div>
+    <list-size list="State.states"></list-size>
+    </div>
 
 
 </div>
