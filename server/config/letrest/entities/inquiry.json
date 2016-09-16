@@ -91,7 +91,7 @@
   "service": {
     "all": {},
     "get": {},
-    "post": {},
+    "post": {"pre":"validateInquiry@/actions/pre/validateExample.js"},
     "put": {},
     "delete": {}
   }
