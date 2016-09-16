@@ -10,6 +10,8 @@
   <div ng-if="!State.loading">
     <button class="state-button" ng-click="State.newState()"><i class="fa fa-plus-square"> Nuevo</i></button>
 
+    <list-size list="State.states"></list-size>
+
     <div class="state-table">
       <div class="state-heading">
         <div class="state-cell">

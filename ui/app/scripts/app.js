@@ -25,8 +25,6 @@
         delete $httpProvider.defaults.headers.common['X-Requested-With'];
     }
     ])
-
-
     //the IP and PORT must match with the setting in ./server/src/letrest_runner.js
     .config(['letrestConfigProvider',function(a){
      a.$get().URLS.REST={

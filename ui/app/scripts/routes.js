@@ -94,6 +94,23 @@ angular
         }
       }
     },
+    'home.movie': {
+      url: '/movie',
+      data: {
+        label: 'PELIS',
+        displayName: 'PELIS',
+        icon: 'fa-camera',
+        weight: 50,
+        level: 0,
+        movetolevel: 0
+      },
+      views: {
+        'content@': {
+          controller: 'MovieController as Movie',
+          templateUrl: 'views/business/movie/movie.html'
+        }
+      }
+    },
     'home.state.newstate': {
       url: '/provincias/agregar',
       data: {
@@ -110,16 +127,34 @@ angular
           templateUrl: 'views/business/state/newstate.html'
         }
       }
+    },
+    'home.inquirytype': {
+      url: '/inquirytype',
+      data: {
+        label: 'Tipo de Consulta',
+        displayName: 'Tipo de Consulta',
+        icon: 'fa-tag',
+        weight: 50,
+        level: 1,
+        movetolevel: 2,
+        crud: 'inquirytype'
+      },
+      views: {
+        'content@': {
+          templateUrl: 'views/common/main-crud.html'
+        }
+      }
     }
   })
-  .config(function ($stateProvider, $urlRouterProvider, menuRoutes) {
+  .config(function ($stateProvider, $urlRouterProvider, menuRoutes, $httpProvider) {
     $urlRouterProvider.otherwise('/home');
     angular.forEach(menuRoutes, function (value, index) {
       $stateProvider
         .state(index, value)
     });
     $stateProvider
-      .state('account.edit', {})
+      .state('account.edit', {});
+    delete $httpProvider.defaults.headers.common['X-Requested-With'];
   });
 
 
