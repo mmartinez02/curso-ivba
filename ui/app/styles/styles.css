@@ -1,12 +1,11 @@
-.nav, .pagination, .carousel, .panel-title a { cursor: pointer; }
-
+.nav, .pagination, .carousel, .panel-title a {
+  cursor: pointer;
+}
 
 body {
   font-family: 'Lato', sans-serif;
   height: 100%;
 }
-
-
 
 h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
   font-family: 'Lato', sans-serif;
@@ -15,7 +14,7 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 
 label {
   font-family: 'Lato', sans-serif;
-  color:#777
+  color: #777
 }
 
 .panel-heading span {
@@ -28,7 +27,7 @@ label {
 
 .content-positioning {
   padding-left: 0px !important;
-  padding-right: 0px  !important;
+  padding-right: 0px !important;
 }
 
 .member-element {
@@ -41,6 +40,7 @@ label {
   font-size: medium;
   font-weight: bold;
 }
+
 .panel-header-icon {
   margin-top: 1px;
 }
@@ -54,28 +54,34 @@ label {
   text-decoration: none;
   transition: color 0.4s ease-out;
 }
+
 .splash a:hover {
   text-decoration: none;
   color: #532d6d;
 }
+
 .splash__item {
   border-radius: 5px;
   background: #fafafa;
   text-align: center;
   width: 150px;
 }
+
 .splash__item span {
   display: block;
   transform: translate(0px, 5px);
   transition: transform 0.4s ease-out;
 }
+
 a:hover .splash__item span {
   transform: translate(0px, 0px);
 }
+
 .splash__item p {
   transform: translate(0px, -10px);
   transition: transform 0.4s ease-out;
 }
+
 a:hover .splash__item p {
   transform: translate(0px, -15px);
 }
@@ -132,24 +138,21 @@ a:hover .splash__item p {
   color: red;
 }
 
-
 .inquiryscreen .left, .inquiryscreen .right {
   width: 50%;
-  float: left ;
-
+  float: left;
 
 }
 
-
-.inquiryscreen .left select , .inquiryscreen .right select  {
+.inquiryscreen .left select, .inquiryscreen .right select {
   width: 80%;
 }
-
 
 .inquiryscreen .crud-field.threecolum .left, .inquiryscreen .crud-field.threecolum .center, .inquiryscreen .crud-field.threecolum .right {
   width: 33%;
   float: left;
 }
+
 .inquiryscreen .crud-field {
   margin-top: 30px;
 }
@@ -196,13 +199,12 @@ a:hover .splash__item p {
   width: 100%
 }
 
-.inquiryscreen .otra_consulta{
+.inquiryscreen .otra_consulta {
   display: block;
   position: relative;
   left: 50%;
 
 }
-
 
 .crud-label {
   width: 180px !important;
@@ -213,7 +215,27 @@ a:hover .splash__item p {
   min-height: 23px;
 }
 
-.text_desc{
+.text_desc {
   min-width: 80%;
   height: 101px;
+}
+
+.list-size-container {
+  width: 100%;
+  height: 50px;
+}
+
+list-size {
+  display: inline-block;
+  float: right;
+}
+
+.list-size-info {
+  width: 45px;
+  padding: 10px;
+  float: right;
+  font-weight: bold;
+  border-radius: 30px;
+  text-align: center;
+  margin: 0 auto;
 }

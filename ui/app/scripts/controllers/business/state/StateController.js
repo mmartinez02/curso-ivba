@@ -72,10 +72,14 @@ angular.module('LetrestApp').controller('StateController', function (LetRestServ
 
   function confirmRemove(state) {
     me.loading = true;
+    me.error = false;
     stateService.delete(state).then(function (res) {
       me.loading = false;
       me.init();
     }).catch(function (err) {
+      me.loading = false;
+      me.error = true;
+      me.errorMsg = err.statusText;
       console.log(err);
     });
   }
